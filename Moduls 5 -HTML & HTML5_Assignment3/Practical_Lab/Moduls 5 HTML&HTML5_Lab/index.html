@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="section-1">
+      <h1>The video element</h1>
+
+      <video width="320" height="240" controls muted loop autoplay>
+        <source src="video/SampleVideo_1280x720_10mb.mp4" type="video/mp4" />
+      </video>
+
+      <h1>The Audio Element</h1>
+      <audio controls autoplay loop muted>
+        <source src="audio/relaxing-145038.mp3" type="audio/ogg" />
+        <!-- <source src="horse.mp3" type="audio/mpeg" /> -->
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+
+    <div class="section-2">
+      <h2>SVG element</h2>
+
+      <h4>SVG circle</h4>
+      <svg width="100" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="green"
+          stroke-width="4"
+          fill="yellow"
+        />
+        Sorry, your browser does not support inline SVG.
+      </svg>
+
+      <h4>SVG Rectangle</h4>
+      <svg width="400" height="120">
+        <rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue" />
+      </svg>
+
+      <h4>SVG Star</h4>
+      <svg width="300" height="200">
+        <polygon points="100,10 40,198 190,78 10,78 160,198"
+        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+      </svg>
+    </div>
+  </body>
+</html>
