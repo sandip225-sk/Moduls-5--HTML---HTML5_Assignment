@@ -1,52 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="section-1">
-      <h1>The video element</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media and Shapes in HTML</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+        }
+        svg {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
 
-      <video width="320" height="240" controls muted loop autoplay>
-        <source src="video/SampleVideo_1280x720_10mb.mp4" type="video/mp4" />
-      </video>
-
-      <h1>The Audio Element</h1>
-      <audio controls autoplay loop muted>
-        <source src="audio/relaxing-145038.mp3" type="audio/ogg" />
-        <!-- <source src="horse.mp3" type="audio/mpeg" /> -->
+    <!-- Audio and Video Elements -->
+    <h2>Audio and Video with Properties</h2>
+    <audio controls autoplay loop muted>
+        <source src="audio/relaxing-145038.mp3" type="audio/mp3">
         Your browser does not support the audio tag.
-      </audio>
-    </div>
+    </audio>
 
-    <div class="section-2">
-      <h2>SVG element</h2>
+    <br><br>
 
-      <h4>SVG circle</h4>
-      <svg width="100" height="100">
-        <circle
-          cx="50"
-          cy="50"
-          r="40"
-          stroke="green"
-          stroke-width="4"
-          fill="yellow"
-        />
-        Sorry, your browser does not support inline SVG.
-      </svg>
+    <video width="400" controls autoplay loop muted>
+        <source src="video/SampleVideo_1280x720_10mb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-      <h4>SVG Rectangle</h4>
-      <svg width="400" height="120">
-        <rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue" />
-      </svg>
+    <br><br>
 
-      <h4>SVG Star</h4>
-      <svg width="300" height="200">
-        <polygon points="100,10 40,198 190,78 10,78 160,198"
-        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
-      </svg>
-    </div>
-  </body>
+    <!-- Canvas Element -->
+    <h2>Canvas Shapes</h2>
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        // Draw a rectangle
+        ctx.fillStyle = "blue";
+        ctx.fillRect(20, 20, 100, 50);
+
+        // Draw a circle
+        ctx.beginPath();
+        ctx.arc(200, 50, 40, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        // Draw a triangle
+        ctx.beginPath();
+        ctx.moveTo(300, 150);
+        ctx.lineTo(350, 50);
+        ctx.lineTo(400, 150);
+        ctx.closePath();
+        ctx.fillStyle = "green";
+        ctx.fill();
+    </script>
+
+    <br><br>
+
+    <!-- SVG Shapes -->
+    <h2>SVG Shapes</h2>
+    <svg width="400" height="200">
+        <!-- Rectangle -->
+        <rect x="20" y="20" width="100" height="50" fill="blue"></rect>
+
+        <!-- Circle -->
+        <circle cx="200" cy="50" r="40" fill="red"></circle>
+
+        <!-- Triangle -->
+        <polygon points="300,150 350,50 400,150" fill="green"></polygon>
+    </svg>
+
+</body>
 </html>
